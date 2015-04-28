@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: fantasy_football_draft_production
-  username: fantasy_football_draft
-  password: <%= ENV['FANTASY_FOOTBALL_DRAFT_DATABASE_PASSWORD'] %>
+
