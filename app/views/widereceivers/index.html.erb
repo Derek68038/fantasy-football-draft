@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td><h1 style="margin-bottom:0"> Top 300 Players </h1></td>
+    <td><h1 style="margin-bottom:0"> Wide Receivers </h1></td>
   </tr>
   
   <tr>
@@ -22,16 +22,16 @@
   
   <tr>
     <% @players.each do |p| %>
-    <td>
-      <a href> 
+      <% if p.position == "WR" %>
+      <td> 
         #<%= p.overallRank %>  
          <%= p.displayName %> - 
          <%= p.position %> 
-       </a>
-     </td>
+       </td>
      <td style="text-align:center"> <%= p.team %> </td>
      <td style="text-align:center"> <%= p.byeWeek %> </td>
      <td style="text-align:center"> <%= p.positionRank %> </td>
   </tr>
+      <% end %>
     <% end %>
 </table>

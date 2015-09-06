@@ -13,7 +13,15 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  root 'players#index'
+  
   resources :players
+  resources :quarterbacks
+  resources :runningbacks
+  resources :widereceivers
+  resources :tightends
+  resources :kickers
+  resources :defenses
   # Example resource route with options:
   #   resources :products do
   #     member do
