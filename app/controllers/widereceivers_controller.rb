@@ -1,4 +1,4 @@
-class PlayersController < ApplicationController
+class WidereceiversController < ApplicationController
   
   def index
     FFNerd.api_key = "mi2feskziis8"
