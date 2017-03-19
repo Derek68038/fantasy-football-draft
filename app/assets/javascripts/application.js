@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function Choice(elem) {
+  var draft = document.getElementById("draft");
+  if (elem.id == "no") {
+    box.style.backgroundColor = "red";
+  } else if (elem.id == "yes") {
+    box.style.backgroundColor = "green";
+  } else {
+    box.style.backgroundColor = "purple";
+  };
+};

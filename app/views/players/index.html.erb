@@ -2,7 +2,7 @@
   <tr>
     <td colspan="4"><h1 style="margin-bottom:0"> Top 300 Players </h1></td>
   </tr>
-  
+
   <tr>
     <td colspan="4"><a href="/" style="margin-right:5px"> Top 300 </a>
     <a href="quarterbacks" style="margin-right:5px"> QB </a>
@@ -12,26 +12,34 @@
     <a href="kickers" style="margin-right:5px"> K </a>
     <a href="defenses" > DEF </a></td>
   </tr>
-  
+
   <tr>
     <td><u><h3> Rank/Player/Position </h3></u></td>
     <td><u><h3> Team </h3></u></td>
     <td><u><h3> Bye </h3></u></td>
-    <td><u><h3> PosRank </h3></u></td>  
+    <td><u><h3> PosRank </h3></u></td>
+    <td><u><h3> Status </h3></u></td>
   </tr>
-  
+
   <tr>
     <% @players.each do |p| %>
-    <td>
-      <a href> 
-        #<%= p.overallRank %>  
-         <%= p.displayName %> - 
-         <%= p.position %> 
-       </a>
-     </td>
-     <td style="text-align:center"> <%= p.team %> </td>
-     <td style="text-align:center"> <%= p.byeWeek %> </td>
-     <td style="text-align:center"> <%= p.positionRank %> </td>
+      <td>
+        <% if p.draft_status == "Available" %>
+          <a onclick="this.style.color='lightgray'"; "this.setAttribute('player_name=Unavailable')">
+            #<%= p.rank %>
+            <%= p.player_name %>
+            <%= p.position %>
+            <%= p.draft_status %>
+          </a>
+        <% else %>
+          <a onclick="this.style.color='black'">
+            #<%= p.rank %>
+            <%= p.player_name %>
+            <%= p.position %>
+            <%= p.draft_status %>
+          </a>
+        <% end %>
+      </td>
   </tr>
     <% end %>
 </table>
